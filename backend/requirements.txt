@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+transformers
+sqlalchemy
+requests
+python-dotenv
+torch
+pydantic
+twikit

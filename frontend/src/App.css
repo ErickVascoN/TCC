@@ -1,0 +1,468 @@
+/* Reset básico */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+  background-color: #020617;
+  color: #e5e7eb;
+}
+
+/* Layout geral */
+.app {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* SIDEBAR */
+
+.sidebar {
+  width: 260px;
+  padding: 24px 20px;
+  background: radial-gradient(circle at top left, #0f172a, #020617 60%);
+  border-right: 1px solid #1f2937;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #38bdf8;
+  margin-bottom: 24px;
+}
+
+.sidebar-label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #9ca3af;
+  margin-bottom: 8px;
+}
+
+.sidebar-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.sidebar-item {
+  background: transparent;
+  border-radius: 999px;
+  border: 1px solid #1f2937;
+  padding: 8px 14px;
+  color: #e5e7eb;
+  text-align: left;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: all 0.15s ease;
+}
+
+.sidebar-item:hover {
+  border-color: #38bdf8;
+  background-color: rgba(56, 189, 248, 0.08);
+}
+
+.sidebar-item--active {
+  background: linear-gradient(90deg, #38bdf8, #22c55e);
+  border-color: transparent;
+  color: #020617;
+  font-weight: 600;
+}
+
+.sidebar-footer {
+  margin-top: 32px;
+  font-size: 0.8rem;
+  color: #9ca3af;
+}
+
+.sidebar-tag {
+  display: inline-block;
+  margin-top: 6px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid #374151;
+  color: #e5e7eb;
+}
+
+/* MAIN */
+
+.main {
+  flex: 1;
+  padding: 24px 32px;
+}
+
+/* HEADER */
+
+.header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.header h1 {
+  font-size: 1.8rem;
+  margin-bottom: 6px;
+}
+
+.subtitle {
+  color: #9ca3af;
+  font-size: 0.95rem;
+}
+
+.highlight {
+  color: #38bdf8;
+  font-weight: 600;
+}
+
+/* CARDS */
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.card {
+  background: radial-gradient(circle at top left, #0b1120, #020617 70%);
+  border-radius: 16px;
+  border: 1px solid #1f2937;
+  padding: 16px 18px;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.8);
+}
+
+.card-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #9ca3af;
+  margin-bottom: 6px;
+}
+
+.card-value {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.card-value.small {
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.card-extra {
+  margin-top: 4px;
+  font-size: 0.85rem;
+  color: #9ca3af;
+}
+
+/* GRÁFICO */
+
+.chart-section {
+  background: radial-gradient(circle at top left, #020617, #020617 60%);
+  border-radius: 18px;
+  border: 1px solid #1f2937;
+  padding: 18px 20px 24px;
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.9);
+}
+
+.chart-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.chart-header h2 {
+  font-size: 1.1rem;
+}
+
+.chart-pill {
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid #374151;
+  font-size: 0.8rem;
+  color: #9ca3af;
+}
+
+.chart-wrapper {
+  width: 100%;
+  height: 360px;
+}
+
+/* ESTADOS */
+
+.loading,
+.error {
+  margin-top: 40px;
+  font-size: 1rem;
+}
+
+.error {
+  color: #f97316;
+}
+
+/* RESPONSIVO */
+
+@media (max-width: 900px) {
+  .app {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .sidebar-list {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .main {
+    padding: 16px 18px;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}
+/* CONTROLES (fonte de dados) */
+
+.controls {
+  margin-bottom: 18px;
+}
+
+.toggle-group {
+  display: inline-flex;
+  border-radius: 999px;
+  border: 1px solid #374151;
+  overflow: hidden;
+  background-color: #020617;
+  margin-bottom: 6px;
+}
+
+.toggle-button {
+  padding: 6px 14px;
+  font-size: 0.85rem;
+  border: none;
+  background: transparent;
+  color: #9ca3af;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+}
+
+.toggle-button:hover {
+  background-color: #0b1120;
+  color: #e5e7eb;
+}
+
+.toggle-button--active {
+  background: linear-gradient(90deg, #38bdf8, #22c55e);
+  color: #020617;
+  font-weight: 600;
+}
+
+.controls-hint {
+  font-size: 0.8rem;
+  color: #9ca3af;
+}
+
+/* Nenhum dado */
+.no-data {
+  text-align: center;
+  color: #9ca3af;
+  padding-top: 40px;
+}
+
+/* ═══════════ CONTROLES DO X ═══════════ */
+
+.x-controls {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.x-label {
+  font-size: 0.8rem;
+  color: #9ca3af;
+}
+
+.x-input {
+  background: #0b1120;
+  border: 1px solid #374151;
+  border-radius: 8px;
+  padding: 8px 12px;
+  color: #e5e7eb;
+  font-size: 0.9rem;
+  outline: none;
+  max-width: 500px;
+}
+
+.x-input:focus {
+  border-color: #38bdf8;
+}
+
+.x-buttons {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+/* ═══════════ FEED / TIMELINE DO X ═══════════ */
+
+.feed-section {
+  margin-top: 24px;
+}
+
+.feed-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.feed-header h2 {
+  font-size: 1.1rem;
+}
+
+.feed-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  max-height: 650px;
+  overflow-y: auto;
+  border: 1px solid #1f2937;
+  border-radius: 16px;
+  background: #020617;
+}
+
+.feed-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.feed-list::-webkit-scrollbar-thumb {
+  background: #374151;
+  border-radius: 999px;
+}
+
+/* Tweet card */
+.tweet-card {
+  padding: 14px 18px;
+  border-bottom: 1px solid #1f2937;
+  transition: background 0.12s ease;
+}
+
+.tweet-card:last-child {
+  border-bottom: none;
+}
+
+.tweet-card:hover {
+  background: #0b1120;
+}
+
+.tweet-top {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+
+.tweet-avatar img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.tweet-avatar-placeholder {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #38bdf8, #22c55e);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1rem;
+  color: #020617;
+}
+
+.tweet-meta {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.tweet-name {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #e5e7eb;
+}
+
+.tweet-handle {
+  font-size: 0.85rem;
+  color: #6b7280;
+}
+
+.tweet-dot {
+  color: #6b7280;
+  font-size: 0.75rem;
+}
+
+.tweet-time {
+  font-size: 0.8rem;
+  color: #6b7280;
+}
+
+.tweet-text {
+  font-size: 0.93rem;
+  line-height: 1.45;
+  color: #d1d5db;
+  white-space: pre-wrap;
+  word-break: break-word;
+  margin-bottom: 8px;
+}
+
+.tweet-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.tweet-stats {
+  display: flex;
+  gap: 18px;
+  font-size: 0.8rem;
+  color: #6b7280;
+}
+
+.tweet-stats span {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.tweet-sentiment {
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 999px;
+  color: #020617;
+  text-transform: capitalize;
+}
